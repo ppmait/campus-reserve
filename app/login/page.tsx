@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { createClient } from "@/lib/supabase/client";
+import Link from "next/link";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -81,6 +82,12 @@ export default function LoginPage() {
         >
           {isSubmitting ? "กำลังเข้าสู่ระบบ..." : "เข้าสู่ระบบ"}
         </button>
+        <p className="text-center text-slate-400">
+          ยังไม่มีบัญชี?{" "}
+          <Link href="/signup" className="text-emerald-300 underline">
+          สมัครสมาชิก
+          </Link>
+        </p>
       </form>
     </main>
   );
